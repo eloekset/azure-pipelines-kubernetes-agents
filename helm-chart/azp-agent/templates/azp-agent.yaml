@@ -54,6 +54,10 @@ spec:
           - name: {{ $key }}
             value: {{ $value | quote }}
          {{- end }}
+        {{- if .Values.image.pullSecret }}
+        imagePullSecrets:
+        - name: {{ .Values.image.pullSecret }}
+        {{- end }}
         volumeMounts:
           - name: workspace
             mountPath: {{ .Values.azpWorkspace | default "/workspace" }}
