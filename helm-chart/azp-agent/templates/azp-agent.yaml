@@ -48,7 +48,7 @@ spec:
               fieldRef:
                 fieldPath: metadata.name
           - name: AZP_WORK
-            value: {{ .azpWorkspace | default "/workspace" }}
+            value: {{ .azpWorkspace | default "/workspace" | quote }}
          {{- end }}
          {{- range $key, $value := .Values.extraEnv }}
           - name: {{ $key }}
@@ -56,7 +56,7 @@ spec:
          {{- end }}
         volumeMounts:
           - name: workspace
-            mountPath: {{ .Values.azpWorkspace | default "/workspace" }}
+            mountPath: {{ .Values.azpWorkspace | default "/workspace" | quote }}
 {{- if .Values.volumeMounts }}
 {{ toYaml .Values.volumeMounts | indent 10 }}
 {{ end }}
