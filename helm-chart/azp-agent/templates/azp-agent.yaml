@@ -17,6 +17,9 @@ spec:
       labels:
         app: {{ .Chart.Name }}
     spec:
+      dnsConfig:
+        options:
+        - name: single-request-reopen
       {{- if .nodeSelector }}
       nodeSelector:
       {{ toYaml .nodeSelector | indent 2 }}
