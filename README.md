@@ -69,7 +69,7 @@ The following table lists the configurable parameters of the `azp-agent` chart a
 The chart can be installed with the following command:
 
 ```
-helm install --set image.repository=<IMAGE REPO> --set image.tag:<IMAGE TAG> --set azpToken=<AZP TOKEN> --set azpUrl=<AZP URL> --set azpPool=<AZP POOL> -f helm-chart\azp-agent\values.yaml helm-chart\azp-agent azp-agent helm-chart\azp-agent
+helm install --set image.repository=<IMAGE REPO> --set image.tag:<IMAGE TAG> --set azpToken=<AZP TOKEN> --set azpUrl=<AZP URL> --set azpPool=<AZP POOL> -f helm-chart\azp-agent\values.yaml azp-agent helm-chart\azp-agent
 ```
 
 Example:
